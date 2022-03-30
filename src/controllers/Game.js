@@ -6,9 +6,13 @@ class Game {
     return colors[Math.floor(Math.random() * colors.length)];
   }
 
-  static updateColor = (state) => {
+  static updateColor = (state = []) => {
     Game.actualState = [...state, Game.getRandomColor()];
   };
+
+  static reset() {
+    Game.actualState = [];
+  }
 }
 
 export default Game;
